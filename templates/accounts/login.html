@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    <form action="{% url 'accounts:login' %}" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Ввійти</button>
-    </form>
+<div class="container my-5">
+    <div class="d-flex justify-content-center">
+        <form action="{% url 'accounts:login' %}" method="post" class="form-control w-50 rounded-0 py-3">
+            <h2 class="text-center">Вхід</h2>
+
+            {% csrf_token %}
+            {{form.as_p}}
+            
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" style="width: 90%">Ввійти</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

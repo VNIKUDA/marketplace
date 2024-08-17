@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    <form action="{% url 'accounts:register' %}" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Зареєструвати</button>
-    </form>
+<div class="container my-5">
+    <div class="d-flex justify-content-center">
+        <form action="{% url 'accounts:register' %}" method="post" class="form-control w-50 rounded-0 py-3 px-4">
+            {% csrf_token %}
+
+            <h2 class="text-center mb-0">Реєстрація</h2>
+
+            <div class="my-4">
+                {{form.as_p}}
+            </div>
+            
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" style="width: 95%">Зареєструватися</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
