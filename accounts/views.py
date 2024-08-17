@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth import views as auth_views
-from accounts.forms import RegistrationForm
+from accounts.forms import RegistrationForm, LoginForm
 
 # Create your views here.
 class RegisterView(CreateView):
@@ -12,3 +12,4 @@ class RegisterView(CreateView):
 
 class LoginView(auth_views.LoginView):
     template_name = "accounts/login.html"
+    form_class = LoginForm
